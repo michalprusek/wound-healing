@@ -1,0 +1,17 @@
+data_root: ./data/data/raw/dataset
+out_dir: ./data/runs/placeholder
+arch: unetplusplus
+encoder: resnext50_32x4d
+image_size: 512
+batch_size: 10
+epochs: 150
+lr: 3.0e-4
+loss: dice+focal
+val_ratio: 0.12
+num_workers: 6
+seed: 0
+patience: 30
+precision: 16-mixed
+swa: true
+swa_start_epoch_ratio: 0.75
+tta: true

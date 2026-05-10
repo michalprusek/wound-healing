@@ -1,0 +1,31 @@
+# v4: Paper-replica. Matches the original-paper ICIP paper's "U-Net (augmented)" row
+# that reports 89.50% Dataset IoU on the external Löwenstein test.
+#
+# Differences vs. our v2/v3:
+#   - plain U-Net (arch=unet), not U-Net++        -> less capacity, less domain-specific overfit
+#   - ResNet-50 encoder (paper ablation winner)
+#   - 256x256 input (paper's inference resize)    -> forces texture/context over pixel-intensity shortcut
+#   - Focal γ=2 loss (only; no Dice combo)        -> matches paper's equation 1 exactly
+#   - initial lr=1e-4, cosine to 1e-6             -> paper says so
+#   - val_ratio=0.10 → ~40 val, ~362 train        -> matches paper's split
+#   - no SWA, no TTA                              -> paper reports vanilla eval
+
+data_root: ./data/data/raw/dataset
+out_dir: ./data/runs/placeholder
+arch: fpn
+encoder: resnet50
+image_size: 256
+batch_size: 32
+epochs: 150
+lr: 1.0e-4
+loss: focal
+val_ratio: 0.10
+num_workers: 6
+seed: 42
+patience: 15
+precision: 16-mixed
+swa: false
+tta: false
+accumulate_grad_batches: 1
+aux_params: false
+aux_weight: 0.0
