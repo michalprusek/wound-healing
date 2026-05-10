@@ -12,11 +12,12 @@ anon_release/
 ├── training/            Training scripts + per-architecture configs
 ├── classical/           Classical Prewitt + Suzuki contour pipeline + free-cell detection
 ├── evaluation/          Per-architecture and per-foundation-model evaluation scripts
-├── annotation_tool/     React frontend + FastAPI backend (semi-automatic annotation platform)
 ├── viz/                 Figure rendering scripts (failure cases, qualitative panels)
 ├── requirements.txt     Python dependencies
 └── LICENSE              MIT
 ```
+
+The annotation tool source code is not included in this submission package; the full annotation platform will be released as a separate open-source repository upon paper acceptance (see paper Conclusion).
 
 ## What's *not* in this repo (large artifacts)
 
@@ -80,14 +81,6 @@ python evaluation/eval_sam_proper.py  # SAM ViT-B (relaxed AMG + union-bright)
 python evaluation/eval_sam2_proper.py # SAM 2 Hiera-L
 python evaluation/eval_medsam_official.py  # MedSAM with min-max normalization
 python evaluation/eval_microsam_ais.py     # µSAM AIS workflow
-```
-
-## Annotation Tool
-
-```bash
-cd annotation_tool/
-docker compose up
-# Opens on http://localhost:8000 — drag-drop a frame to test
 ```
 
 ## License
