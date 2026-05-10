@@ -1,17 +1,18 @@
-# Core
-torch>=2.0,<2.6      # primary training stack
+# Core (required for training + supervised eval)
+torch>=2.0,<2.6
 torchvision>=0.15
 numpy>=1.24
 scipy>=1.10
 scikit-image>=0.21
 Pillow>=10.0
 pyyaml>=6.0
+pytorch-lightning>=2.0,<2.5
 
-# Segmentation models
+# Segmentation models (Tab. 1 supervised + LOOCV)
 segmentation_models_pytorch==0.3.4
 albumentations>=1.4
 
-# Classical pipeline
+# Classical pipeline + foundation-model image ops
 opencv-python>=4.8
 
 # Evaluation + plotting
@@ -19,14 +20,29 @@ matplotlib>=3.7
 pandas>=2.0
 tqdm>=4.65
 
-# Foundation models (optional; only if running their evals)
-# segment_anything            # for SAM ViT-B / µSAM
-# transformers>=5.0           # for SAM 2 / SAM 3 / MedSAM HF
-# cellpose>=4.0               # Cellpose 4 cpsam
-# micro-sam                   # µSAM AIS
+# --- Optional: foundation-model baselines (Tab. 1 prompt-free block) ---
+# Uncomment the line(s) for each baseline you want to reproduce:
 
-# nnU-Net (optional; only if reproducing nnU-Net)
-# nnunetv2
+# Cellpose-SAM (cpsam) — for evaluation/eval_cellpose.py
+# cellpose==4.1.1
 
-# Curvelet (optional; only if reproducing TScratch baseline)
-# curvelets
+# SAM ViT-B — for evaluation/eval_sam_proper.py
+# segment-anything==1.0
+# # then download SAM ViT-B checkpoint manually from official Meta release
+
+# SAM 2 Hiera-L — for evaluation/eval_sam2_proper.py
+# transformers>=4.45
+# # SAM 2 weights via HuggingFace facebook/sam2-hiera-large
+
+# MedSAM — for evaluation/eval_medsam_official.py
+# transformers>=4.45  # shared with SAM 2
+# # MedSAM weights via HuggingFace flaviagiammarino/medsam-vit-base
+
+# µSAM — for evaluation/eval_microsam_ais.py
+# micro-sam>=1.0   # provides AIS workflow + cached vit_b_lm checkpoint
+
+# nnU-Net — for evaluation/eval_nnunet.py + prepare_nnunet_dataset.py
+# nnunetv2>=2.5
+
+# TScratch (optional curvelet baseline)
+# curvelets   # for evaluation/eval_tscratch.py

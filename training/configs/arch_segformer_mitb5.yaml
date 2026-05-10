@@ -1,0 +1,22 @@
+# SegFormer-like: U-Net decoder + MIT (Mix Transformer) encoder from MMSegmentation/timm.
+# Same paper recipe as arch_*: 256², bs=32, Focal, AdamW 1e-4, patience=15.
+
+data_root: ./data/data/raw/dataset
+out_dir: ./data/runs/placeholder
+arch: unet
+encoder: mit_b5
+image_size: 256
+batch_size: 16
+epochs: 150
+lr: 1.0e-4
+loss: focal
+val_ratio: 0.10
+num_workers: 6
+seed: 42
+patience: 15
+precision: 16-mixed
+swa: false
+tta: false
+accumulate_grad_batches: 2
+aux_params: false
+aux_weight: 0.0

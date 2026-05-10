@@ -1,0 +1,3 @@
+60bdccc6cc486a0a6e769d2d78e918f5c5dc037efb6f025d87747c1d243f9295  wounds-weights-fair-recipe.tar
+3f09caae37fa748fff505be211ee260071cfe5f7a6f70e443227b98b9bb467a8  wounds-weights-loocv.tar
+aa8875b772a8a2b65d860b2c6fc229f791826336df92a5f25cb06ef4fde4c092  wounds-dataset.zip
