@@ -50,11 +50,10 @@ The annotation tool source code is not included; the full annotation platform wi
 
 | Artifact | Size | Location |
 |---|---|---|
-| Trained model checkpoints (fair recipe) | 2.2 GB | `<OSF view-only>/wounds-weights-fair-recipe.tar` |
-| LOOCV checkpoints (4 archs × 4 cell-lines) | 4.3 GB | `<OSF view-only>/wounds-weights-loocv.tar` |
-| Dataset (446 frames + masks) | 349 MB | `<OSF view-only>/wounds-dataset.zip` |
+| Trained model checkpoints (Tab. 1 fair-recipe block: 10 SMP architectures + nnU-Net) | 2.4 GB | `<OSF view-only>/wounds-weights-fair-recipe.tar` |
+| Dataset (446 frames + masks) | 366 MB | `<OSF view-only>/wounds-dataset.zip` |
 
-The OSF view-only URL is provided in the paper Conclusion + the submission system's reproducibility field. Verify after download:
+LOOCV checkpoints (Tab. 2) are reproducible from `scripts/loocv_run.sh` in ~25 min on 2 NVIDIA L40S GPUs. The OSF view-only URL is provided in the paper Conclusion + the submission system's reproducibility field. Verify after download:
 ```bash
 sha256sum -c checksums.txt
 ```
@@ -72,7 +71,7 @@ pip install -r requirements.txt
 
 # 3. Fetch dataset + weights from anonymous host (OSF view-only URL in paper)
 mkdir -p data checkpoints
-# (download the 3 artifacts manually or via OSF API)
+# (download the 2 artifacts manually or via OSF API: dataset zip + fair-recipe tar)
 unzip wounds-dataset.zip -d data/
 tar -xf wounds-weights-fair-recipe.tar -C checkpoints/
 sha256sum -c checksums.txt
