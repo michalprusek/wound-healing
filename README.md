@@ -48,12 +48,16 @@ The annotation tool source code is not included; the full annotation platform wi
 
 ## Reviewer-accessible artifacts
 
-| Artifact | Size | Location |
-|---|---|---|
-| Trained model checkpoints (Tab. 1 fair-recipe block: 10 SMP architectures + nnU-Net) | 2.4 GB | `<OSF view-only>/wounds-weights-fair-recipe.tar` |
-| Dataset (446 frames + masks) | 366 MB | `<OSF view-only>/wounds-dataset.zip` |
+All artifacts are hosted on an anonymous OSF view-only project: **<https://osf.io/ju95p/?view_only=f38bdfd3e67a4cf4814b507879d9c1b9>** (contributors anonymized).
 
-LOOCV checkpoints (Tab. 2) are reproducible from `scripts/loocv_run.sh` in ~25 min on 2 NVIDIA L40S GPUs. The OSF view-only URL is provided in the paper Conclusion + the submission system's reproducibility field. Verify after download:
+| Artifact | Size | Purpose |
+|---|---|---|
+| `wounds-weights-fair-recipe.tar` | 2.2 GB | Tab. 1 fair-recipe: 10 SMP architectures (s42) + nnU-Net 250ep |
+| `wounds-weights-loocv.tar` | 4.3 GB | Tab. 2 LOOCV: 4 architectures × 4 cell-line holdouts (16 ckpts) |
+| `wounds-dataset.zip` | 349 MB | 446 frames + masks across 4 cell lines, with train/val/test split |
+| `checksums.txt` | 273 B | SHA-256 verification |
+
+Verify after download:
 ```bash
 sha256sum -c checksums.txt
 ```
@@ -69,11 +73,13 @@ pip install -r requirements.txt
 # Foundation-model evals additionally need: cellpose>=4.1, segment-anything,
 # transformers, micro-sam, nnunetv2 (uncomment in requirements.txt).
 
-# 3. Fetch dataset + weights from anonymous host (OSF view-only URL in paper)
+# 3. Fetch dataset + weights from anonymous OSF (URL in §"Reviewer-accessible artifacts" above)
 mkdir -p data checkpoints
-# (download the 2 artifacts manually or via OSF API: dataset zip + fair-recipe tar)
+# Download the 4 artifacts manually from OSF, or via osfclient:
+#   pip install osfclient && osf -p ju95p clone .  (after osf init)
 unzip wounds-dataset.zip -d data/
 tar -xf wounds-weights-fair-recipe.tar -C checkpoints/
+tar -xf wounds-weights-loocv.tar -C checkpoints/
 sha256sum -c checksums.txt
 
 # 4. Re-run individual rows of Tab. 1
