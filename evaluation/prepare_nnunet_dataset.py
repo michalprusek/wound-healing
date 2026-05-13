@@ -60,7 +60,7 @@ def main():
         "numTest": n_test,
         "file_ending": ".png",
         "name": "Wounds",
-        "description": "anonymized wound-healing scratch-assay binary segmentation",
+        "description": "wound-healing scratch-assay binary segmentation",
     }
     with open(DST / "dataset.json", "w") as f:
         json.dump(info, f, indent=2)
