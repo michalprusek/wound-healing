@@ -32,7 +32,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from train import Config, SegmentationModel, tta_predict  # type: ignore
 
 
-EXTERNAL_ROOT = Path("/data/AUTHOR/wounds/data/external_lowenstein/woundhealing_v3")
+EXTERNAL_ROOT = Path("/data/wounds/wounds/data/external_lowenstein/woundhealing_v3")
 STAGES = ("stage_1", "stage_2", "stage_3")
 
 

@@ -12,7 +12,7 @@ We sweep thresholds on the post-process step:
   relaxed: threshold=0.3, mask_threshold=0.0   (more permissive)
 
 Usage:
-  python eval_sam3.py --out-json /data/AUTHOR/wounds/results/sam3_relaxed.json --mode relaxed
+  python eval_sam3.py --out-json /data/wounds/wounds/results/sam3_relaxed.json --mode relaxed
 """
 from __future__ import annotations
 import argparse, json, os
@@ -28,8 +28,8 @@ import torch
 from PIL import Image
 from scipy import ndimage as ndi
 
-INTERNAL_ROOT = Path('/data/AUTHOR/wounds/data/raw/dataset/test')
-EXTERNAL_ROOT = Path('/data/AUTHOR/wounds/data/external_lowenstein/woundhealing_v3')
+INTERNAL_ROOT = Path('/data/wounds/wounds/data/raw/dataset/test')
+EXTERNAL_ROOT = Path('/data/wounds/wounds/data/external_lowenstein/woundhealing_v3')
 STAGES = ('stage_1', 'stage_2', 'stage_3')
 HF_ID = 'facebook/sam3'
 

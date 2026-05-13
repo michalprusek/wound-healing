@@ -48,8 +48,8 @@ from PIL import Image
 from scipy import ndimage as ndi
 from skimage import morphology
 
-INTERNAL_ROOT = Path("/data/AUTHOR/wounds/data/raw/dataset/test")
-EXTERNAL_ROOT = Path("/data/AUTHOR/wounds/data/external_lowenstein/woundhealing_v3")
+INTERNAL_ROOT = Path("/data/wounds/wounds/data/raw/dataset/test")
+EXTERNAL_ROOT = Path("/data/wounds/wounds/data/external_lowenstein/woundhealing_v3")
 STAGES = ("stage_1", "stage_2", "stage_3")
 
 
@@ -259,7 +259,7 @@ def main():
     p.add_argument("--erode", type=int, default=2)
     p.add_argument("--hole-area", type=float, default=0.07)
     p.add_argument("--island-area", type=float, default=0.07)
-    p.add_argument("--out-json", default="/data/AUTHOR/wounds/results/tscratch.json")
+    p.add_argument("--out-json", default="/data/wounds/wounds/results/tscratch.json")
     p.add_argument("--limit", type=int, default=0, help="limit images per set (debug)")
     args = p.parse_args()
 

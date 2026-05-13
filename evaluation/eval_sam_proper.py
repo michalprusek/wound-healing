@@ -15,8 +15,8 @@ import torch
 from PIL import Image
 from scipy import ndimage as ndi
 
-INTERNAL_ROOT = Path('/data/AUTHOR/wounds/data/raw/dataset/test')
-EXTERNAL_ROOT = Path('/data/AUTHOR/wounds/data/external_lowenstein/woundhealing_v3')
+INTERNAL_ROOT = Path('/data/wounds/wounds/data/raw/dataset/test')
+EXTERNAL_ROOT = Path('/data/wounds/wounds/data/external_lowenstein/woundhealing_v3')
 STAGES = ('stage_1', 'stage_2', 'stage_3')
 CKPT = '/home/AUTHOR/checkpoints/sam/sam_vit_b_01ec64.pth'
 
@@ -125,7 +125,7 @@ def main():
 
     # Load woundratio helper
     import sys, os
-    sys.path.insert(0, '/data/AUTHOR/wounds/scripts')
+    sys.path.insert(0, '/data/wounds/wounds/scripts')
 
     for label, pairs in sets:
         agg_tp = agg_fp = agg_fn = 0

@@ -7,8 +7,8 @@ import torch
 from PIL import Image
 from scipy import ndimage as ndi
 
-INTERNAL_ROOT = Path('/data/AUTHOR/wounds/data/raw/dataset/test')
-EXTERNAL_ROOT = Path('/data/AUTHOR/wounds/data/external_lowenstein/woundhealing_v3')
+INTERNAL_ROOT = Path('/data/wounds/wounds/data/raw/dataset/test')
+EXTERNAL_ROOT = Path('/data/wounds/wounds/data/external_lowenstein/woundhealing_v3')
 STAGES = ('stage_1', 'stage_2', 'stage_3')
 CKPT = '/home/AUTHOR/checkpoints/sam2/sam2.1_hiera_large.pt'
 CFG = 'configs/sam2.1/sam2.1_hiera_l.yaml'

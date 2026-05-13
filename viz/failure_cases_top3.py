@@ -89,7 +89,7 @@ def predict_nnunet_batch(images_dict, nnunet_dir, tmp_root, device):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--manet-ckpt", required=True)
-    p.add_argument("--manet-cfg", default="/data/AUTHOR/wounds/configs/arch_manet.yaml")
+    p.add_argument("--manet-cfg", default="/data/wounds/wounds/configs/arch_manet.yaml")
     p.add_argument("--mitb5-ckpt", required=True)
     p.add_argument("--nnunet-dir", required=True)
     p.add_argument("--n", type=int, default=5)

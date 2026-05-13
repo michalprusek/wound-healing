@@ -5,17 +5,17 @@ One run per dataset (internal or lowenstein). No legend / no y-axis labels.
 Equal vertical and horizontal gaps between panels.
 
 Usage (on tulen/kajman):
-    source /data/AUTHOR/wounds/.venv/bin/activate
-    python /data/AUTHOR/wounds/anon_release/viz/three_stages_panel.py \
+    source /data/wounds/wounds/.venv/bin/activate
+    python /data/wounds/wounds/wound-healing/viz/three_stages_panel.py \
         --dataset internal \
-        --manet-ckpt /data/AUTHOR/wounds/runs/<RUN>_arch_manet_s42/best.ckpt \
-        --manet-cfg  /data/AUTHOR/wounds/anon_release/training/configs/arch_manet.yaml \
-        --nnunet-dir /data/AUTHOR/wounds/nnunet_results/Dataset001_Wounds/nnUNetTrainer_250epochs__nnUNetPlans__2d/fold_0 \
-        --out-pdf /data/AUTHOR/wounds/paper/img/three_stages_internal.pdf
+        --manet-ckpt /data/wounds/wounds/runs/<RUN>_arch_manet_s42/best.ckpt \
+        --manet-cfg  /data/wounds/wounds/wound-healing/training/configs/arch_manet.yaml \
+        --nnunet-dir /data/wounds/wounds/nnunet_results/Dataset001_Wounds/nnUNetTrainer_250epochs__nnUNetPlans__2d/fold_0 \
+        --out-pdf /data/wounds/wounds/paper/img/three_stages_internal.pdf
 
-    python /data/AUTHOR/wounds/anon_release/viz/three_stages_panel.py \
+    python /data/wounds/wounds/wound-healing/viz/three_stages_panel.py \
         --dataset lowenstein --manet-ckpt ... --nnunet-dir ... \
-        --out-pdf /data/AUTHOR/wounds/paper/img/three_stages_lowenstein.pdf
+        --out-pdf /data/wounds/wounds/paper/img/three_stages_lowenstein.pdf
 """
 from __future__ import annotations
 
@@ -39,10 +39,10 @@ from PIL import Image
 from scipy import ndimage as ndi
 
 THIS = Path(__file__).resolve()
-ANON = THIS.parent.parent
-sys.path.insert(0, str(ANON / "evaluation"))
-sys.path.insert(0, str(ANON / "classical"))
-sys.path.insert(0, str(ANON / "training"))
+REPO_ROOT = THIS.parent.parent
+sys.path.insert(0, str(REPO_ROOT / "evaluation"))
+sys.path.insert(0, str(REPO_ROOT / "classical"))
+sys.path.insert(0, str(REPO_ROOT / "training"))
 
 # evaluation utilities
 from eval_external import (  # type: ignore
@@ -56,7 +56,7 @@ import torch.nn.functional as F
 
 # Mirror the absolute cluster paths used in eval_sam2_proper.py so this script
 # works regardless of cwd. Override via --internal-root / --lowenstein-root.
-INTERNAL_ROOT_DEFAULT = Path("/data/AUTHOR/wounds/data/raw/dataset/test")
+INTERNAL_ROOT_DEFAULT = Path("/data/wounds/wounds/data/raw/dataset/test")
 
 
 def _list_internal(root: Path):
