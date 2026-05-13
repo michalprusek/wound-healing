@@ -1,14 +1,11 @@
-# Wound Healing Segmentation — Anonymous Reproducibility Package
+# Wound Healing Segmentation
 
-> Submitted to **IEEE ICIP 2026 COMIC Workshop** under double-blind review.
-> All identifying information has been stripped.
-
-This repository contains the source code and pointers to the model checkpoints + dataset used for our ICIP 2026 COMIC submission *"From Manual Annotation to Robust Inference in Wound Healing Microscopy."*
+Code, weights, and dataset for our cross-cell-line wound-healing segmentation paper (IEEE ICIP 2026 COMIC Workshop submission, *"From Manual Annotation to Robust Inference in Wound Healing Microscopy"*).
 
 ## Repository layout
 
 ```
-anon_release/
+wound-healing/
 ├── training/             Training scripts + per-architecture configs (SMP + MiT-B5)
 │   ├── train.py
 │   ├── train_segformer_mit.py            (MiT-B5 trainer)
@@ -44,11 +41,11 @@ anon_release/
 └── LICENSE               MIT
 ```
 
-The annotation tool source code is not included; the full annotation platform will be released as a separate open-source repository upon paper acceptance (see paper Conclusion).
+The source code of the web annotation tool will be released as a separate open-source repository upon paper acceptance (see paper Conclusion).
 
-## Reviewer-accessible artifacts
+## Downloadable artifacts
 
-All artifacts are hosted on an anonymous OSF view-only project: **<https://osf.io/ju95p/?view_only=f38bdfd3e67a4cf4814b507879d9c1b9>** (contributors anonymized).
+Hosted on OSF: **<https://osf.io/ju95p/>**
 
 | Artifact | Size | Purpose |
 |---|---|---|
@@ -65,15 +62,15 @@ sha256sum -c checksums.txt
 ## Quickstart — reproducing Tab. 1
 
 ```bash
-# 1. Clone (or download as ZIP from anonymous.4open.science)
-git clone <this-repo>  &&  cd wound-healing-anon
+# 1. Clone (or download as ZIP)
+git clone <this-repo>  &&  cd wound-healing
 
 # 2. Install core dependencies
 pip install -r requirements.txt
 # Foundation-model evals additionally need: cellpose>=4.1, segment-anything,
 # transformers, micro-sam, nnunetv2 (uncomment in requirements.txt).
 
-# 3. Fetch dataset + weights from anonymous OSF (URL in §"Reviewer-accessible artifacts" above)
+# 3. Fetch dataset + weights from OSF (URL in §"Downloadable artifacts" above)
 mkdir -p data checkpoints
 # Download the 4 artifacts manually from OSF, or via osfclient:
 #   pip install osfclient && osf -p ju95p clone .  (after osf init)
@@ -144,13 +141,12 @@ python statistics/bench.py --architectures unet+resnet50 unet+mitb5 manet+resnet
 
 ## Citation
 
-(Anonymized for review.)
-
 ```bibtex
-@inproceedings{anonymous2026wound,
-  title={From Manual Annotation to Robust Inference in Wound Healing Microscopy},
-  author={Anonymous},
-  booktitle={IEEE ICIP 2026 COMIC Workshop},
-  year={2026}
+@inproceedings{wound2026,
+  title     = {From Manual Annotation to Robust Inference in Wound Healing Microscopy},
+  booktitle = {IEEE ICIP 2026 COMIC Workshop on Computational Optical Microscopy},
+  year      = {2026}
 }
 ```
+
+Full author list and acknowledgements will be added upon paper acceptance.
