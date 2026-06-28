@@ -1,8 +1,8 @@
 """
 Wound-healing scratch-assay segmentation — U-Net++ (ResNet-50) trainer.
 
-Built for [INSTITUTION_GPU_HOST][redacted], RTX A5000 (GPU 1). Based on the existing
-PyTorch-Lightning setup in wound-healing/backend/imgproc/unet/net.py,
+Built for a single RTX A5000 GPU. Based on the existing
+PyTorch-Lightning setup in the annotation tool's backend (imgproc/unet/net.py),
 with the following deltas:
 
   - Architecture: smp.UnetPlusPlus (vs. smp.Unet)

@@ -11,7 +11,7 @@ build/
 dist/
 *.egg-info/
 
-# Data + checkpoints (not committed; downloaded from anonymous host)
+# Data + checkpoints (not committed; downloaded from OSF)
 data/
 checkpoints/
 runs/
@@ -26,10 +26,3 @@ results/
 
 # OS
 Thumbs.db
-
-# Anonymization compliance
-# Make sure no identifying files leak
-.git/config.user
-*.author
-authors.md
-AUTHORS.md

@@ -4,7 +4,7 @@ Evaluate a wound-healing checkpoint on the external Löwenstein dataset
 
 The external set has a different layout (stages, not train/test), 30 images,
 RGB inputs, vertical-wound orientations — none of which the model saw in
-training. This is the canonical generalization test used in the original-paper paper.
+training. This is the canonical generalization test used in the paper.
 
 Reports:
   - Dataset IoU  (micro: one IoU over all pixels aggregated across images)
@@ -12,7 +12,7 @@ Reports:
   - Per-image IoU / Dice (mean across images)
   - Per-stage breakdown (stage_1 / stage_2 / stage_3)
 
-The "Dataset IoU" number is what the original-paper paper (Table 2) reports — use it
+The "Dataset IoU" number is what the paper (Table 2) reports — use it
 for apples-to-apples comparison with their 89.50 %.
 """
 

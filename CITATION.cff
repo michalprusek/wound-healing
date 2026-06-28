@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this code, dataset, or weights, please cite the paper below."
+title: "Generalizing Wound Healing Segmentation: From Semi-Automatic Annotation to Robust Inference"
+authors:
+  - family-names: Veškrna
+    given-names: Lukáš
+  - family-names: Průšek
+    given-names: Michal
+  - family-names: Novozámský
+    given-names: Adam
+  - family-names: Šroubek
+    given-names: Filip
+  - family-names: "Svobodová Pavlíčková"
+    given-names: Vladimíra
+  - family-names: Rimpelová
+    given-names: Silvie
+license: MIT
+repository-code: "https://github.com/michalprusek/wound-healing"
+preferred-citation:
+  type: conference-paper
+  title: "Generalizing Wound Healing Segmentation: From Semi-Automatic Annotation to Robust Inference"
+  authors:
+    - family-names: Veškrna
+      given-names: Lukáš
+    - family-names: Průšek
+      given-names: Michal
+    - family-names: Novozámský
+      given-names: Adam
+    - family-names: Šroubek
+      given-names: Filip
+    - family-names: "Svobodová Pavlíčková"
+      given-names: Vladimíra
+    - family-names: Rimpelová
+      given-names: Silvie
+  collection-title: "IEEE ICIP 2026 COMIC Workshop on Computational Optical Microscopy"
+  year: 2026

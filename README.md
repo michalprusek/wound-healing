@@ -1,6 +1,6 @@
 # Wound Healing Segmentation
 
-Code, weights, and dataset for our cross-cell-line wound-healing segmentation paper (IEEE ICIP 2026 COMIC Workshop submission, *"From Manual Annotation to Robust Inference in Wound Healing Microscopy"*).
+Code, weights, and dataset for our cross-cell-line wound-healing segmentation paper (IEEE ICIP 2026 COMIC Workshop, *"Generalizing Wound Healing Segmentation: From Semi-Automatic Annotation to Robust Inference"*).
 
 ## Repository layout
 
@@ -19,6 +19,7 @@ wound-healing/
 │   ├── eval_cellpose.py                  (Cellpose-SAM, complement-of-cells)
 │   ├── eval_sam_proper.py                (SAM ViT-B + AMG + union-bright)
 │   ├── eval_sam2_proper.py               (SAM 2 Hiera-L + same strategy)
+│   ├── eval_sam3.py                      (SAM 3 promptable concept segmentation)
 │   ├── eval_medsam_official.py           (MedSAM with official preprocessing + bbox prompts)
 │   ├── eval_microsam_ais.py              (µSAM AIS workflow)
 │   ├── eval_nnunet.py                    (nnU-Net inference wrapper)
@@ -31,7 +32,8 @@ wound-healing/
 │   └── bench.py                          (inference latency benchmark)
 ├── viz/                  Figure rendering
 │   ├── failure_cases_top3.py             (Fig. 3 in main paper)
-│   └── viz_foundation_qualitative.py     (foundation-model qualitative panel)
+│   ├── viz_foundation_qualitative.py     (foundation-model qualitative panel)
+│   └── three_stages_panel.py             (per-stage qualitative panel, internal/Löwenstein)
 ├── scripts/              Orchestrators
 │   ├── loocv_run.sh                      (Tab. 2 reproduction)
 │   ├── loocv_run_unet_fpn.sh             (per-architecture LOOCV variant)
@@ -41,7 +43,7 @@ wound-healing/
 └── LICENSE               MIT
 ```
 
-The source code of the web annotation tool will be released as a separate open-source repository upon paper acceptance (see paper Conclusion).
+The web annotation tool described in the paper is publicly available and deployed at <https://spherosegapp.utia.cas.cz/>.
 
 ## Downloadable artifacts
 
@@ -142,11 +144,10 @@ python statistics/bench.py --architectures unet+resnet50 unet+mitb5 manet+resnet
 ## Citation
 
 ```bibtex
-@inproceedings{wound2026,
-  title     = {From Manual Annotation to Robust Inference in Wound Healing Microscopy},
+@inproceedings{veskrna2026generalizing,
+  title     = {Generalizing Wound Healing Segmentation: From Semi-Automatic Annotation to Robust Inference},
+  author    = {Veškrna, Lukáš and Průšek, Michal and Novozámský, Adam and Šroubek, Filip and Svobodová Pavlíčková, Vladimíra and Rimpelová, Silvie},
   booktitle = {IEEE ICIP 2026 COMIC Workshop on Computational Optical Microscopy},
   year      = {2026}
 }
 ```
-
-Full author list and acknowledgements will be added upon paper acceptance.

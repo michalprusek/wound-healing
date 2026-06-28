@@ -18,7 +18,7 @@ from scipy import ndimage as ndi
 INTERNAL_ROOT = Path('/data/wounds/wounds/data/raw/dataset/test')
 EXTERNAL_ROOT = Path('/data/wounds/wounds/data/external_lowenstein/woundhealing_v3')
 STAGES = ('stage_1', 'stage_2', 'stage_3')
-CKPT = '/home/AUTHOR/checkpoints/sam/sam_vit_b_01ec64.pth'
+CKPT = './checkpoints/sam/sam_vit_b_01ec64.pth'
 
 
 def list_internal():

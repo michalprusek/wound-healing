@@ -46,8 +46,8 @@ if "HF_TOKEN" not in os.environ and _TOK.exists():
 INTERNAL_ROOT = Path("/data/wounds/wounds/data/raw/dataset/test")
 EXTERNAL_ROOT = Path("/data/wounds/wounds/data/external_lowenstein/woundhealing_v3")
 
-SAM_VITB_CKPT = "/home/AUTHOR/checkpoints/sam/sam_vit_b_01ec64.pth"
-SAM2_CKPT = "/home/AUTHOR/checkpoints/sam2/sam2.1_hiera_large.pt"
+SAM_VITB_CKPT = "./checkpoints/sam/sam_vit_b_01ec64.pth"
+SAM2_CKPT = "./checkpoints/sam2/sam2.1_hiera_large.pt"
 SAM2_CFG = "configs/sam2.1/sam2.1_hiera_l.yaml"
 MICROSAM_CKPT = "/data/wounds/wounds/checkpoints/vit_b_lm.pt"
 

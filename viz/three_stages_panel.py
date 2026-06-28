@@ -4,7 +4,7 @@ cols = Orig, GT, TScratch, SAM 2 Hiera-L, Classical (ours), nnU-Net 250ep, MAnet
 One run per dataset (internal or lowenstein). No legend / no y-axis labels.
 Equal vertical and horizontal gaps between panels.
 
-Usage (on tulen/kajman):
+Usage:
     source /data/wounds/wounds/.venv/bin/activate
     python /data/wounds/wounds/wound-healing/viz/three_stages_panel.py \
         --dataset internal \
@@ -15,7 +15,7 @@ Usage (on tulen/kajman):
 
     python /data/wounds/wounds/wound-healing/viz/three_stages_panel.py \
         --dataset lowenstein --manet-ckpt ... --nnunet-dir ... \
-        --out-pdf /data/wounds/wounds/paper/img/three_stages_lowenstein.pdf
+        --out-pdf three_stages_lowenstein.pdf
 """
 from __future__ import annotations
 
@@ -313,7 +313,7 @@ def main():
     ap.add_argument("--nnunet-dir", required=True,
                     help="trained-model folder containing fold_0/checkpoint_final.pth")
     ap.add_argument("--sam2-ckpt",
-                    default="/home/AUTHOR/checkpoints/sam2/sam2.1_hiera_large.pt")
+                    default="./checkpoints/sam2/sam2.1_hiera_large.pt")
     ap.add_argument("--sam2-cfg", default="configs/sam2.1/sam2.1_hiera_l.yaml")
     ap.add_argument("--internal-root", type=Path, default=INTERNAL_ROOT_DEFAULT)
     ap.add_argument("--out-pdf", required=True)

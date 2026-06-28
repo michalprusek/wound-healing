@@ -12,7 +12,7 @@ We sweep thresholds on the post-process step:
   relaxed: threshold=0.3, mask_threshold=0.0   (more permissive)
 
 Usage:
-  python eval_sam3.py --out-json /data/wounds/wounds/results/sam3_relaxed.json --mode relaxed
+  python eval_sam3.py --out-json results/sam3_relaxed.json --mode relaxed
 """
 from __future__ import annotations
 import argparse, json, os

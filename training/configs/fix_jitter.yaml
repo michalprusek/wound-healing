@@ -1,4 +1,4 @@
-# v4: Paper-replica. Matches the original-paper ICIP paper's "U-Net (augmented)" row
+# v4: Paper-replica. Matches the original ICIP paper's "U-Net (augmented)" row
 # that reports 89.50% Dataset IoU on the external Löwenstein test.
 #
 # Differences vs. our v2/v3:
