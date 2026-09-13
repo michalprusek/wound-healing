@@ -13,10 +13,10 @@ Models are loaded sequentially to keep GPU memory in check; predictions are cach
 into a dict before plotting.
 
 Usage:
-    source /data/wounds/wounds/.venv/bin/activate
-    python /data/wounds/wounds/scripts/viz_foundation_qualitative.py \
-        --out-pdf /data/wounds/wounds/viz/foundation_qualitative.pdf \
-        --out-png /data/wounds/wounds/viz/foundation_qualitative.png
+    source .venv/bin/activate
+    python viz/viz_foundation_qualitative.py \
+        --out-pdf ./viz/foundation_qualitative.pdf \
+        --out-png ./viz/foundation_qualitative.png
 """
 from __future__ import annotations
 
@@ -43,13 +43,13 @@ _TOK = Path.home() / ".cache/huggingface/token"
 if "HF_TOKEN" not in os.environ and _TOK.exists():
     os.environ["HF_TOKEN"] = _TOK.read_text().strip()
 
-INTERNAL_ROOT = Path("/data/wounds/wounds/data/raw/dataset/test")
-EXTERNAL_ROOT = Path("/data/wounds/wounds/data/external_lowenstein/woundhealing_v3")
+INTERNAL_ROOT = Path("./data/data/raw/dataset/test")
+EXTERNAL_ROOT = Path("./data/data/external_lowenstein/woundhealing_v3")
 
 SAM_VITB_CKPT = "./checkpoints/sam/sam_vit_b_01ec64.pth"
 SAM2_CKPT = "./checkpoints/sam2/sam2.1_hiera_large.pt"
 SAM2_CFG = "configs/sam2.1/sam2.1_hiera_l.yaml"
-MICROSAM_CKPT = "/data/wounds/wounds/checkpoints/vit_b_lm.pt"
+MICROSAM_CKPT = "./checkpoints/vit_b_lm.pt"
 
 
 # --- shared utils ---

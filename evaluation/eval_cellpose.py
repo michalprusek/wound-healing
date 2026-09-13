@@ -29,7 +29,7 @@ from scipy import ndimage as ndi
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from eval_external import STAGES, list_pairs, load_pair  # type: ignore
 
-INTERNAL_ROOT = Path("/data/wounds/wounds/data/raw/dataset/test")
+INTERNAL_ROOT = Path("./data/data/raw/dataset/test")
 
 
 def list_internal_pairs():

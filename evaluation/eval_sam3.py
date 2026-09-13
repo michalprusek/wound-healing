@@ -28,8 +28,8 @@ import torch
 from PIL import Image
 from scipy import ndimage as ndi
 
-INTERNAL_ROOT = Path('/data/wounds/wounds/data/raw/dataset/test')
-EXTERNAL_ROOT = Path('/data/wounds/wounds/data/external_lowenstein/woundhealing_v3')
+INTERNAL_ROOT = Path('./data/data/raw/dataset/test')
+EXTERNAL_ROOT = Path('./data/data/external_lowenstein/woundhealing_v3')
 STAGES = ('stage_1', 'stage_2', 'stage_3')
 HF_ID = 'facebook/sam3'
 

@@ -5,15 +5,15 @@ One run per dataset (internal or lowenstein). No legend / no y-axis labels.
 Equal vertical and horizontal gaps between panels.
 
 Usage:
-    source /data/wounds/wounds/.venv/bin/activate
-    python /data/wounds/wounds/wound-healing/viz/three_stages_panel.py \
+    source .venv/bin/activate
+    python viz/three_stages_panel.py \
         --dataset internal \
-        --manet-ckpt /data/wounds/wounds/runs/<RUN>_arch_manet_s42/best.ckpt \
-        --manet-cfg  /data/wounds/wounds/wound-healing/training/configs/arch_manet.yaml \
-        --nnunet-dir /data/wounds/wounds/nnunet_results/Dataset001_Wounds/nnUNetTrainer_250epochs__nnUNetPlans__2d/fold_0 \
-        --out-pdf /data/wounds/wounds/paper/img/three_stages_internal.pdf
+        --manet-ckpt ./checkpoints/arch_manet.ckpt \
+        --manet-cfg  ./training/configs/arch_manet.yaml \
+        --nnunet-dir ./checkpoints/nnunet_250ep/fold_0 \
+        --out-pdf ./viz/three_stages_internal.pdf
 
-    python /data/wounds/wounds/wound-healing/viz/three_stages_panel.py \
+    python viz/three_stages_panel.py \
         --dataset lowenstein --manet-ckpt ... --nnunet-dir ... \
         --out-pdf three_stages_lowenstein.pdf
 """
@@ -56,7 +56,7 @@ import torch.nn.functional as F
 
 # Mirror the absolute cluster paths used in eval_sam2_proper.py so this script
 # works regardless of cwd. Override via --internal-root / --lowenstein-root.
-INTERNAL_ROOT_DEFAULT = Path("/data/wounds/wounds/data/raw/dataset/test")
+INTERNAL_ROOT_DEFAULT = Path("./data/data/raw/dataset/test")
 
 
 def _list_internal(root: Path):
