@@ -11,7 +11,7 @@ build/
 dist/
 *.egg-info/
 
-# Data + checkpoints (not committed; downloaded from OSF)
+# Data + checkpoints (not committed; downloaded from Zenodo)
 data/
 checkpoints/
 runs/
