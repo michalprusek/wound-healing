@@ -16,6 +16,13 @@ authors:
     given-names: Silvie
 license: MIT
 repository-code: "https://github.com/michalprusek/wound-healing"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24416065
+    description: "ScratchSeg dataset (Zenodo)"
+  - type: doi
+    value: 10.5281/zenodo.24416067
+    description: "ScratchSeg trained weights (Zenodo)"
 preferred-citation:
   type: conference-paper
   title: "Generalizing Wound Healing Segmentation: From Semi-Automatic Annotation to Robust Inference"
@@ -32,5 +39,5 @@ preferred-citation:
       given-names: Vladimíra
     - family-names: Rimpelová
       given-names: Silvie
-  collection-title: "IEEE ICIP 2026 COMIC Workshop on Computational Optical Microscopy"
+  collection-title: "IEEE ICIP 2026 Workshop Learning Beyond Deep Learning (LBDL) II"
   year: 2026
